@@ -1,0 +1,1 @@
+A simple buy/sell recommendation algorithm assuming we know the future values of the stock. written in C++
