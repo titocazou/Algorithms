@@ -202,7 +202,6 @@ void PacMan::run_A_star () {
     int g_cost; // g cost of node
     int moving_cost = 1; // moving cost to a neighbor is 1 unless it is food (which is 0 in that case)
 
-
     // iterate through neighbors
     for (vector<pair<int,int>>::iterator it=neighbors.begin(); it!=neighbors.end(); ++it) {
       // if neighbor is in closed set don't bother
@@ -216,13 +215,11 @@ void PacMan::run_A_star () {
       // compute g cost of neighbor
       g_cost = g_cost_map_[pacman_.first][pacman_.second] + moving_cost; // g cost is current node cost + cost of moving to neighbor
 
-
       if(open_set_.count(*it) == 0) { // if neighbor is not in open set, add it and continue to logic below
         open_set_.insert(*it);
       } else if (g_cost_map_[it->first][it->second] <= g_cost) { // if current neighbor cost is higher than current g cost, continue to logic below
         continue;
       }
-
       // at this point, either this is the first time the neighboring node is visited and the cost goes from infinity to g_cost
       // or g_cost is smaller than the current neighbor cost. In both cases, update the g cost, compute the f cost and keep track
       // of the previous node
