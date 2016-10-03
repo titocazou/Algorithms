@@ -227,7 +227,6 @@ void PacMan::run_A_star () {
       f_cost_map_[it->first][it->second] = g_cost + heuristic_cost(*it);
       previous_node_map_.insert(make_pair(*it, pacman_));
     }
-
   }
 }
 
